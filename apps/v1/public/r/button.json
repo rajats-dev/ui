@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "button",
+  "description": "A simple button component",
+  "dependencies": [
+    "@radix-ui/react-slot"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/button.tsx",
+      "content": "",
+      "type": "registry:ui"
+    },
+    {
+      "path": "registry\\default\\ui\\button.tsx",
+      "content": "",
+      "type": "registry:ui",
+      "target": ""
+    }
+  ]
+}
