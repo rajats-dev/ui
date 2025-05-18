@@ -1,4 +1,4 @@
-import { MainNavItem } from "../(app)/types/nav";
+import { MainNavItem } from "../app/(app)/types/nav";
 
 export interface DocsConfig {
   mainNav: MainNavItem[];
