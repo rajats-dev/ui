@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
     "incremental": false,
@@ -19,7 +20,8 @@
     "jsx": "preserve",
     "noEmit": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [
@@ -27,7 +29,8 @@
     "**/*.tsx",
     "next-env.d.ts",
     "next.config.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }

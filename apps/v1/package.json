@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 3000",
-    "build": "next build",
+    "build": "pnpm contentlayer2 build && next build",
+    "build:docs": "contentlayer2 build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
     "check-types": "tsc --noEmit",
@@ -14,13 +15,18 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "contentlayer2": "^0.5.8",
+    "date-fns": "^4.1.0",
     "geist": "^1.4.2",
     "lucide-react": "^0.510.0",
+    "mdx-bundler": "^10.1.1",
     "next": "^15.3.0",
+    "next-contentlayer2": "^0.5.8",
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-wrap-balancer": "^1.1.1",
     "shadcn": "2.6.0-canary.2",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7"
