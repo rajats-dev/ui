@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ExternalLink, Forward } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Balancer from "react-wrap-balancer";
 import { Mdx } from "@/components/mdx-components";
@@ -15,7 +15,7 @@ interface DocPageProps {
 async function getDocFromParams({
   params,
 }: {
-  params: Promise<{ slug: string[] }>;
+  params: Promise<DocPageProps["params"]>;
 }) {
   const slug = (await params).slug?.join("/") || "";
 
@@ -41,7 +41,7 @@ export async function generateStaticParams(): Promise<
 export default async function DocPage({
   params,
 }: {
-  params: Promise<{ slug: string[] }>;
+  params: Promise<DocPageProps["params"]>;
 }) {
   const doc = await getDocFromParams({ params });
 
@@ -58,7 +58,7 @@ export default async function DocPage({
           <Link href='/docs' className='truncate'>
             Docs
           </Link>
-          <ChevronRight className='h-3.5 w-3.5' />
+          <Forward className='h-4 w-4' />
           <div className='text-foreground'>{doc.title}</div>
         </div>
         <div className='space-y-2'>

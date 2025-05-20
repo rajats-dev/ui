@@ -30,23 +30,27 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
+    --background: 0, 0%, 6% 100%;
+    /* --foreground: 210 20% 98%; */
+    --foreground: 0, 0%, 88%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+    /* --primary: 210 20% 98%; */
+    --primary: 252, 63%, 36%;
+    --primary-foreground: 240, 5%, 8%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
+    /* --accent: 225, 7%, 12%; */
+    --accent: 259, 65%, 21%;
     --accent-foreground: 210 20% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
+    /* --border: 215 27.9% 16.9%; */
+    --border: 223, 17%, 16%;
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
     --chart-1: 220 70% 50%;
@@ -59,15 +63,19 @@
 
 @layer utilities {
   .border-grid {
-    @apply border-border/50 dark:border-border border-dashed;
+    @apply border-border/50 dark:border-border border-solid;
   }
 
   .container-wrapper {
-    @apply max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x border-border/70 dark:border-border mx-auto w-full border-dashed;
+    @apply max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-0 border-border/70 dark:border-border mx-auto w-full border-solid rounded-xl;
   }
 
   .container {
-    @apply px-4 xl:px-6 mx-auto max-w-screen-2xl;
+    @apply px-4 xl:px-2 mx-auto max-w-screen-2xl;
+  }
+
+  .shawdow {
+    box-shadow: 8px 2px 17px 0px rgba(0, 0, 0, 0.8);
   }
 }
 
