@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "types/nav";
 import { type DocsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
+import { BookDown, CircleDot } from "lucide-react";
+import { CommandMenu } from "./command-menu";
+import { Icons, sideNavIcons } from "./icons";
+import Image from "next/image";
 
 export function DocsNav({ config }: { config: DocsConfig }) {
   const pathname = usePathname();
@@ -13,9 +17,13 @@ export function DocsNav({ config }: { config: DocsConfig }) {
 
   return items.length ? (
     <div className='flex flex-col gap-6'>
+      <div className='hidden w-full flex-1 md:flex md:w-auto md:flex-none'>
+        <CommandMenu />
+      </div>
       {items.map((item, index) => (
         <div key={index} className='flex flex-col gap-1'>
-          <h4 className='rounded-md px-2 py-1 text-md font-bold'>
+          <h4 className='flex items-center gap-1 rounded-md py-1 text-md font-bold'>
+            <CircleDot size={14} />
             {item.title}{" "}
             {item.label && (
               <span className='ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs font-normal leading-none text-[#000000] no-underline group-hover:no-underline'>
@@ -47,7 +55,7 @@ function DocsNavItems({
             key={index}
             href={item.href}
             className={cn(
-              "group relative flex h-9 w-full items-center rounded-lg px-2 after:absolute after:inset-x-0 after:inset-y-[-2px]  after:rounded-lg hover:bg-accent hover:text-accent-foreground ",
+              "group relative flex h-9 w-full items-center rounded-lg px-2 after:absolute after:inset-x-0 after:inset-y-[-2px] after:rounded-lg hover:bg-accent hover:text-accent-foreground ",
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "bg-accent font-medium text-accent-foreground"
@@ -56,7 +64,9 @@ function DocsNavItems({
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
           >
-            {item.title}
+            <span className='flex items-center gap-2 ml-2'>
+              {sideNavIcons(item.title)} {item.title}
+            </span>
             {item.label && (
               <span className='ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline'>
                 {item.label}

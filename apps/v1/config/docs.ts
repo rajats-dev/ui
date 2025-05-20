@@ -36,16 +36,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
-    {
-      title: "Installation",
-      items: [
-        {
-          title: "Next.js",
-          href: "/docs/installation/next",
-          items: [],
-        },
-      ],
-    },
+    // {
+    //   title: "Installation",
+    //   items: [
+    //     {
+    //       title: "Next.js",
+    //       href: "/docs/installation/next",
+    //       items: [],
+    //     },
+    //   ],
+    // },
     {
       title: "Components",
       items: [

@@ -77,6 +77,9 @@
   .shawdow {
     box-shadow: 8px 2px 17px 0px rgba(0, 0, 0, 0.8);
   }
+  .shawdowNav {
+    box-shadow: 8px 2px 17px 0px rgb(0, 0, 1);
+  }
 }
 
 @layer base {
