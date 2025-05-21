@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack --port 3000",
     "build": "pnpm contentlayer2 build && next build",
+    "build:registry": "tsx --tsconfig ./scripts/build-reg.mts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "build:docs": "contentlayer2 build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
@@ -14,6 +15,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.13",
+    "@radix-ui/react-tabs": "^1.1.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -25,13 +27,17 @@
     "next": "^15.3.0",
     "next-contentlayer2": "^0.5.8",
     "next-themes": "^0.4.6",
+    "os": "^0.1.2",
     "radix-ui": "^1.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-wrap-balancer": "^1.1.1",
+    "rimraf": "^6.0.1",
     "shadcn": "2.6.0-canary.2",
     "tailwind-merge": "^3.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "ts-morph": "^26.0.0",
+    "zod": "^3.25.17"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
@@ -41,6 +47,7 @@
     "eslint": "^9.26.0",
     "postcss": "^8.5.3",
     "tailwindcss": "3",
+    "tsx": "^4.19.4",
     "typescript": "5.8.2"
   }
 }
